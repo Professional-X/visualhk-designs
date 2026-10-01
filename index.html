@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VisualHK Designs — Let's build your website</title>
+<meta name="description" content="VisualHK Designs — Email us to build your website. Custom websites crafted for your brand." />
+<meta name="theme-color" content="#0b0f19" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#0b0f19;
+    --bg2:#0e1424;
+    --ink:#eef1f7;
+    --muted:#9aa4bd;
+    --accent:#7c5cff;
+    --accent2:#22d3ee;
+    --card:rgba(255,255,255,.04);
+    --line:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .bg{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(60% 50% at 20% 20%, rgba(124,92,255,.25), transparent 60%),
+      radial-gradient(50% 50% at 80% 30%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(60% 60% at 50% 100%, rgba(124,92,255,.15), transparent 60%),
+      linear-gradient(180deg, var(--bg), var(--bg2));
+    animation:float 14s ease-in-out infinite alternate;
+  }
+  .grid{
+    position:fixed;inset:0;z-index:-1;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(circle at 50% 40%, black, transparent 75%);
+  }
+  @keyframes float{
+    0%{transform:translate3d(0,0,0)}
+    100%{transform:translate3d(0,-20px,0)}
+  }
+
+  header{
+    max-width:1080px;margin:0 auto;
+    padding:28px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    font-weight:700;letter-spacing:.2px;font-size:18px;
+  }
+  .brand .dot{
+    width:30px;height:30px;border-radius:9px;
+    background:conic-gradient(from 210deg, var(--accent), var(--accent2), var(--accent));
+    box-shadow:0 8px 24px rgba(124,92,255,.45);
+  }
+  .brand small{color:var(--muted);font-weight:500;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+
+  main{
+    max-width:1080px;margin:0 auto;
+    padding:40px 24px 80px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+    min-height:calc(100vh - 96px);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--card);
+    font-size:12.5px;color:var(--muted);letter-spacing:.6px;
+    margin-bottom:24px;
+  }
+  .eyebrow .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--accent2);
+    box-shadow:0 0 0 0 rgba(34,211,238,.7);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}
+    70%{box-shadow:0 0 0 12px rgba(34,211,238,0)}
+    100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}
+  }
+  h1{
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.04;margin:0 0 22px;
+    letter-spacing:-1.5px;font-weight:800;
+  }
+  h1 .grad{
+    background:linear-gradient(120deg, var(--accent2), var(--accent) 60%, #f0abfc);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  p.lead{
+    color:var(--muted);font-size:18px;line-height:1.65;max-width:560px;margin:0 0 34px;
+  }
+
+  .cta{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:18px 30px;border-radius:14px;text-decoration:none;
+    background:linear-gradient(120deg, var(--accent), #5b8bff);
+    color:#fff;font-weight:700;font-size:17px;
+    box-shadow:0 16px 40px rgba(124,92,255,.45), inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .cta:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 22px 50px rgba(124,92,255,.55), inset 0 1px 0 rgba(255,255,255,.3)}
+  .cta:active{transform:translateY(0)}
+  .cta svg{width:20px;height:20px}
+
+  .meta{
+    margin-top:26px;color:var(--muted);font-size:13.5px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta span{display:inline-flex;align-items:center;gap:7px}
+  .meta i{width:5px;height:5px;border-radius:50%;background:var(--accent2);display:inline-block}
+
+  .preview{
+    position:relative;border-radius:22px;padding:26px;
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--line);
+    backdrop-filter:blur(14px);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    transform:perspective(1200px) rotateY(-6deg) rotateX(2deg);
+    transition:transform .6s ease;
+  }
+  .preview:hover{transform:perspective(1200px) rotateY(-2deg) rotateX(0)}
+  .preview .win{display:flex;gap:7px;margin-bottom:18px}
+  .preview .win b{width:11px;height:11px;border-radius:50%;display:block}
+  .preview .win b:nth-child(1){background:#ff5f57}
+  .preview .win b:nth-child(2){background:#febc2e}
+  .preview .win b:nth-child(3){background:#28c840}
+  .preview .line{height:10px;border-radius:6px;background:rgba(255,255,255,.08);margin-bottom:10px}
+  .preview .line.w70{width:70%}.preview .line.w50{width:50%}.preview .line.w90{width:90%}
+  .preview .hero{
+    height:120px;border-radius:14px;margin:14px 0;
+    background:
+      radial-gradient(70% 120% at 20% 10%, rgba(124,92,255,.55), transparent 60%),
+      radial-gradient(80% 120% at 90% 100%, rgba(34,211,238,.45), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--line);
+  }
+  .preview .btns{display:flex;gap:10px;margin-top:14px}
+  .preview .btns b{height:30px;border-radius:8px;background:rgba(124,92,255,.25);border:1px solid rgba(124,92,255,.5);width:90px}
+  .preview .btns b:nth-child(2){background:rgba(255,255,255,.06);border-color:var(--line);width:60px}
+
+  footer{
+    max-width:1080px;margin:0 auto;padding:24px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    color:var(--muted);font-size:13px;
+  }
+  footer a{color:var(--ink);text-decoration:none}
+  footer a:hover{color:var(--accent2)}
+
+  @media (max-width:860px){
+    main{grid-template-columns:1fr;gap:36px;padding:24px 18px 60px}
+    .preview{transform:none}
+    .preview:hover{transform:none}
+    h1{font-size:42px}
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+
+  <header>
+    <div class="brand">
+      <div class="dot"></div>
+      <div>
+        VisualHK Designs
+        <div><small>Web &amp; Brand Studio</small></div>
+      </div>
+    </div>
+    <a class="cta" style="padding:10px 18px;font-size:14px" href="mailto:visualhookdesign@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20Build%20my%20website&body=Hi%20VisualHK%20Designs%2C%0A%0AI%27d%20like%20to%20build%20a%20website.%20Here%20are%20my%20details%3A%0A%0A-%20Name%3A%20%0A-%20Business%20%2F%20Project%20idea%3A%20%0A-%20Budget%3A%20%0A-%20Timeline%3A%20%0A%0AThanks%21">
+      Email us
+    </a>
+  </header>
+
+  <main>
+    <section>
+      <span class="eyebrow"><span class="pulse"></span> Available for new projects</span>
+      <h1>Email us to <span class="grad">build your website</span>.</h1>
+      <p class="lead">
+        VisualHK Designs crafts modern, fast and beautiful websites tailored to your brand.
+        Whether you need a portfolio, a landing page or a full business site &mdash; we'll bring it to life.
+        Drop us a line and let's start building.
+      </p>
+      <a class="cta"
+         href="mailto:visualhookdesign@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20Build%20my%20website&body=Hi%20VisualHK%20Designs%2C%0A%0AI%27d%20like%20to%20build%20a%20website.%20Here%20are%20my%20details%3A%0A%0A-%20Name%3A%20%0A-%20Business%20%2F%20Project%20idea%3A%20%0A-%20Budget%3A%20%0A-%20Timeline%3A%20%0A%0AThanks%21">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+          <path d="m22 7-10 6L2 7"></path>
+        </svg>
+        Email us to build your website
+      </a>
+      <div class="meta">
+        <span><i></i> visualhookdesign@gmail.com</span>
+        <span><i></i> Custom design &amp; development</span>
+        <span><i></i> Fast turnaround</span>
+      </div>
+    </section>
+
+    <div class="preview" aria-hidden="true">
+      <div class="win"><b></b><b></b><b></b></div>
+      <div class="line w90"></div>
+      <div class="line w70"></div>
+      <div class="hero"></div>
+      <div class="line w50"></div>
+      <div class="line w90"></div>
+      <div class="line w70"></div>
+      <div class="btns"><b></b><b></b></div>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; <span id="y"></span> VisualHK Designs. All rights reserved.</div>
+    <div><a href="mailto:visualhookdesign@gmail.com">visualhookdesign@gmail.com</a></div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
